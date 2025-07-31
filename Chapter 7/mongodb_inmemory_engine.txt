@@ -1,0 +1,7 @@
+# Performance tuning: Configure MongoDB to use the in-memory storage engine
+storage:  
+   engine: inMemory
+   dbPath: <path>
+   inMemory:
+      engineConfig:
+         inMemorySizeGB: <newSize>

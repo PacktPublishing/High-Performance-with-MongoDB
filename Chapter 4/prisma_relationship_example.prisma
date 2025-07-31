@@ -1,0 +1,29 @@
+model Author {  
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId  
+  name      String  
+  email     String   @unique  
+  books     Book[]   // One-to-many relationship  
+  bio       Bio?     // One-to-one relationship  
+}
+
+model Book {  
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId  
+  title     String  
+  isbn      String   @unique  
+  authorId  String   @db.ObjectId  
+  author    Author   @relation(fields: [authorId], references: [id])  
+  genres    Genre[]  // Many-to-many relationship  
+}
+
+model Genre {  
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId  
+  name      String   @unique  
+  books     Book[]  
+}
+
+model Bio {  
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId  
+  text      String  
+  authorId  String   @unique @db.ObjectId  
+  author    Author   @relation(fields: [authorId], references: [id])  
+}

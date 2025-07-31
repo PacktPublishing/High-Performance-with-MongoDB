@@ -1,0 +1,2 @@
+//MongoDB log excerpt
+[conn12345] Too many open connections

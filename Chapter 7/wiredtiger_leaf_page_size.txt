@@ -1,0 +1,6 @@
+# Performance tuning: Reduce WiredTiger leaf page size for collections
+storage:    
+  engine: wiredTiger
+  wiredTiger:
+    collectionConfig:
+      configString: "leaf_page_max=8192"  # 8kB

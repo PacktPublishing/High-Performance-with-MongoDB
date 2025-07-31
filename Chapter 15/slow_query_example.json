@@ -1,0 +1,23 @@
+{
+  "find": "db.collection_g",
+  "filter": {
+    "attribute1_Id": {
+      "$oid": "621094e7bdbed43d3f408384"
+    },
+    "attribute1_Name": "aws-use1-1-v2-1",
+    "attribute2_Id": {
+      "$oid": "65bd5e7ccff98a5722037dc6"
+    }
+  },
+  "limit": 1
+}
+
+/*
+"planSummary": "COLLSCAN",
+"planningTimeMicros": 259,
+"keysExamined": 0,
+"docsExamined": 34436,
+"nreturned": 1,
+"durationMillis": 103,
+"cpuNanos": 10987385
+*/
