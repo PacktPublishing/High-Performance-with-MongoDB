@@ -1,0 +1,284 @@
+// Embedded pattern
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d5e6f"),
+  username: "jane_smith",
+  name: "Jane Smith",
+  email: "jane.smith@example.com",
+  profile: {
+    bio: "Travel enthusiast and photographer",
+    location: "San Francisco, CA",
+    birthdate: ISODate("1988-04-12T00:00:00Z"),
+    avatar: "https://socialite.com/images/avatars/jane_smith.jpg"
+  },
+  preferences: {
+    theme: "dark",
+    emailNotifications: true,
+    privacySettings: {
+      profileVisibility: "friends",
+      activityStatus: "everyone"
+    }
+  }
+}
+
+// Extended reference pattern
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d6f4h"),
+  content: "Just visited the Golden Gate Bridge! #travels #sanfrancisco",
+  postDate: ISODate("2023-04-07T09:15:30Z"),
+  media: ["https://socialite.com/images/posts/golden_gate.jpg"],
+  likes: 42,
+  comments: 7,
+  author: {
+    _id: ObjectId("5f4e5b6d3c1e2a1b3c4d5e6f"), // Reference to complete user
+    username: "jane_smith",                    // Duplicated for display
+    name: "Jane Smith",                        // Duplicated for display
+    avatar: "https://socialite.com/images/avatars/jane_smith.jpg" // Duplicated for display
+  }
+}
+
+// Subset pattern
+// Document 1: Frequently accessed media post data
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d6f5i"),
+  postType: "video",
+  title: "My Trip to Yosemite",
+  authorId: ObjectId("5f4e5b6d3c1e2a1b3c4d5e6f"),
+  thumbnailUrl: "https://socialite.com/thumbnails/yosemite-trip.jpg",
+  duration: "3:42",
+  viewCount: 1287,
+  likeCount: 328,
+  commentCount: 57
+}
+// Document 2: Infrequently accessed media post data
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d6f6j"),
+  postId: ObjectId("5f4e5b6d3c1e2a1b3c4d6f5i"),
+  highResVideo: "https://socialite.com/videos/yosemite-trip-hd.mp4",
+  rawMetadata: {
+    codec: "H.264",
+    resolution: "1920x1080",
+    fps: 60,
+    bitrate: "12Mbps"
+  },
+  processingHistory: [
+    { timestamp: ISODate("2023-04-05T14:20:00Z"), action: "uploaded" },
+    { timestamp: ISODate("2023-04-05T14:25:12Z"), action: "processed" },
+    { timestamp: ISODate("2023-04-05T14:30:45Z"), action: "published" }
+  ]
+}
+
+// Document versioning pattern
+// Current version (in main collection)
+{
+  _id: "feature_story_sharing",
+  name: "Story Sharing Feature",
+  isEnabled: true,
+  userPercentage: 75,
+  configuration: {
+    maxDurationSeconds: 30,
+    allowedFilters: ["sepia", "noir", "vintage"],
+    maxFileSize: 15728640
+  },
+  version: 3,
+  lastUpdated: ISODate("2023-04-12T16:30:00Z")
+}
+// History collection (previous versions)
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d7f2o"),
+  featureId: "feature_story_sharing",
+  name: "Story Sharing Feature",
+  isEnabled: true,
+  userPercentage: 50, // Was 50%, now 75%
+  configuration: {
+    maxDurationSeconds: 30,
+    allowedFilters: ["sepia", "noir"], // "vintage" filter added later
+    maxFileSize: 15728640
+  },
+  version: 2,
+  updatedAt: ISODate("2023-04-10T09:15:00Z")
+}
+
+// Bucketing pattern
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d5f2f"),
+  userId: ObjectId("5f4e5b6d3c1e2a1b3c4d5e6f"),
+  date: ISODate("2023-04-10T00:00:00Z"),
+  activities: [
+    {
+      type: "post",
+      postId: ObjectId("5f4e5b6d3c1e2a1b3c4d6f4h"),
+      timestamp: ISODate("2023-04-10T10:00:00Z"),
+      content: "Just posted a new photo!",
+      mediaUrl: "https://socialite.com/images/photo123.jpg",
+      likes: 42
+    },
+    {
+      type: "follow",
+      timestamp: ISODate("2023-04-10T10:15:12Z"),
+      targetUser: {
+        id: ObjectId("5f4e5b6d3c1e2a1b3c4d6f7j"),
+        username: "travel_adventures"
+      }
+    },
+    {
+      type: "like",
+      timestamp: ISODate("2023-04-10T10:25:30Z"),
+      postId: ObjectId("5f4e5b6d3c1e2a1b3c4d6f8k"),
+      postAuthor: "mountain_explorer",
+      postSnippet: "Summit day at Mt. Rainier..."
+    }
+    // ... more activities within this day
+  ],
+  activityCount: 27
+}
+
+// Key prefixing pattern
+{
+  _id: "user_5f4e5b6d3c1e2a1b3c4d5e6f",
+  username: "jane_smith",
+  email: "jane.smith@example.com"
+  // ... other user fields
+}
+{
+  _id: "user_5f4e5b6d3c1e2a1b3c4d5e6f_notif_001", // Notification with prefix
+  type: "like",
+  message: "Alex liked your post",
+  timestamp: ISODate("2023-04-10T10:30:00Z"),
+  read: false
+}
+{
+  _id: "user_5f4e5b6d3c1e2a1b3c4d5e6f_notif_002", // Another notification
+  type: "comment",
+  message: "Sarah commented on your post",
+  timestamp: ISODate("2023-04-10T11:15:00Z"),
+  read: false
+}
+
+// Computed pattern
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d6f7k"),
+  content: "Check out my new photography portfolio!",
+  postDate: ISODate("2023-04-10T14:30:00Z"),
+  engagementMetrics: {
+    totalViews: 1432,
+    uniqueViewers: 1053,
+    likeCount: 287,
+    commentCount: 43,
+    shareCount: 18,
+    avgTimeViewed: 12.5, // in seconds
+    conversionRate: 0.086 // % of viewers who took action
+  },
+  // Demographics of engagers (pre-computed)
+  audienceBreakdown: {
+    genderDistribution: {
+      male: 0.48,
+      female: 0.51,
+      other: 0.01
+    },
+    ageGroups: {
+      "18-24": 0.32,
+      "25-34": 0.45,
+      "35-44": 0.15,
+      "45+": 0.08
+    }
+  }
+}
+
+// Schema versioning pattern
+// New document with schema version 3
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d5e6f"),
+  schemaVersion: 3,
+  username: "jane_smith",
+  name: { // In schema v3, we split name into first/last
+    first: "Jane",
+    last: "Smith"
+  },
+  email: "jane.smith@example.com"
+  // ... other fields
+}
+// Older document with schema version 2
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d5e7a"),
+  schemaVersion: 2,
+  username: "john_doe",
+  fullName: "John Doe", // In schema v2, we used a single name field
+  email: "john.doe@example.com"
+  // ... other fields
+}
+
+// Polymorphic pattern
+// Post activity
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d5e6f"),
+  activityType: "post",
+  userId: ObjectId("5f4e5b6d3c1e2a1b3c4d5e7a"),
+  timestamp: ISODate("2023-04-10T15:30:00Z"),
+  content: "Just posted a new photo!",
+  mediaUrl: "https://socialite.com/images/photo123.jpg"
+}
+// Follow activity
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d5e7b"),
+  activityType: "follow",
+  userId: ObjectId("5f4e5b6d3c1e2a1b3c4d5e7a"),
+  timestamp: ISODate("2023-04-10T16:45:00Z"),
+  targetUserId: ObjectId("5f4e5b6d3c1e2a1b3c4d5e8c"),
+  targetUsername: "alex_wong"
+}
+// Group join activity
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d5e8d"),
+  activityType: "group_join",
+  userId: ObjectId("5f4e5b6d3c1e2a1b3c4d5e7a"),
+  timestamp: ISODate("2023-04-10T17:15:00Z"),
+  groupId: ObjectId("5f4e5b6d3c1e2a1b3c4d5e9e"),
+  groupName: "Photography Enthusiasts"
+}
+
+// Attribute pattern
+// Traditional approach (sparse)
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d5e9d"),
+  username: "jane_smith",
+  favoriteMusic: null,
+  favoriteMovies: null,
+  schoolHistory: null,
+  workHistory: ["Google", "Microsoft"],
+  relationshipStatus: "Married",
+  politicalViews: null,
+  religiousViews: null
+  // ... hundreds more potentially null fields
+}
+// Attribute pattern
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d5e9d"),
+  username: "jane_smith",
+  attributes: [
+    { name: "workHistory", value: ["Google", "Microsoft"] },
+    { name: "relationshipStatus", value: "Married" }
+  ]
+}
+
+// Archive pattern
+// Active messages collection
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d7f5q"),
+  conversationId: ObjectId("5f4e5b6d3c1e2a1b3c4d7f6r"),
+  sender: ObjectId("5f4e5b6d3c1e2a1b3c4d5e7a"),
+  recipient: ObjectId("5f4e5b6d3c1e2a1b3c4d5e6f"),
+  content: "Are we still meeting tomorrow?",
+  timestamp: ISODate("2023-04-10T14:30:00Z"),
+  read: true
+}
+// Archived messages collection (older than 90 days)
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d7f7s"),
+  conversationId: ObjectId("5f4e5b6d3c1e2a1b3c4d7f6r"),
+  sender: ObjectId("5f4e5b6d3c1e2a1b3c4d5e7a"),
+  recipient: ObjectId("5f4e5b6d3c1e2a1b3c4d5e6f"),
+  content: "Hey, how's it going?",
+  timestamp: ISODate("2023-01-05T10:15:00Z"),
+  read: true,
+  archivedAt: ISODate("2023-04-05T00:00:00Z")
+}

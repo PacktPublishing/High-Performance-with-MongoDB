@@ -1,0 +1,23 @@
+{
+  "_id": {
+    "_data": "825F65A78B000000012B022C0100296E5A1004..."  // Resume token
+  },
+  "operationType": "update",
+  "ns": {
+    "db": "inventory",
+    "coll": "products"
+  },
+  "documentKey": {
+    "_id": ObjectId("5f65a78b0000000000000001")
+  },
+  "updateDescription": {
+    "updatedFields": {
+      "price": 29.99,
+      "lastModified": ISODate("2023-09-15T14:22:01.123Z")
+    },
+    "removedFields": ["promotion"]
+  },
+  "fullDocument": {  // Only present with fullDocument option
+    // Complete current state of the document
+  }
+}

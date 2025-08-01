@@ -1,0 +1,22 @@
+{
+  "op": "query",
+  "ns": "mydb.orders",
+  "command": {
+    "find": "orders",
+    "filter": { "status": "shipped", "orderDate": { "$gt": ISODate("2025-01-01") } },
+    "sort": { "customerName": 1 },
+    "limit": 100
+  },
+  "keysExamined": 0,
+  "docsExamined": 1000000,
+  "nreturned": 53,
+  "responseLength": 24601,
+  "millis": 2543,
+  "planSummary": "COLLSCAN",
+  "execStats": {
+    // Detailed execution statistics
+  },
+  "client": "192.168.1.50",
+  "user": "appuser",
+  "appName" : "my-custom-microservice-01"
+}

@@ -1,0 +1,2 @@
+net:  
+  maxIncomingConnections: 65536

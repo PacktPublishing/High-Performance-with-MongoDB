@@ -1,0 +1,1 @@
+mongodb+srv://<db_username>:<db_password>@abc123.mongodb.net/test?readPreference=secondary&readPreferenceTags=nodeType:ANALYTICS

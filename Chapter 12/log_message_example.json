@@ -1,0 +1,30 @@
+//  Example: Log Message for Query Execution formatted for readability
+{
+"type" : "command",  
+"ns" : "test.coll",  
+"collectionType" : "normal",  
+"command" : {
+        "aggregate" : "coll",
+        "pipeline" : [
+                {"$match" : {"$or" : [
+                       {"x" : {"$gt" : 5,"$lt" : 10}},
+                       {"a" : {"$gt" : 5,"$lt" : 10}}
+                ]}},
+                {"$sortByCount" : "$b"}
+        ],
+        "$clusterTime" : { ... },
+        "$db" : "test"
+},
+"planSummary" : "IXSCAN { x: 1 }, IXSCAN { a: 1 }",
+"planningTimeMicros" : 2572,
+"keysExamined" : 567,
+"docsExamined" : 567,
+"hasSortStage" : true,
+"nreturned" : 40,
+"planCacheKey" : "DAC1B215",
+"queryFramework" : "sbe",
+"locks" : {"Global" : {"acquireCount" : {"r" : 4}}},
+"storage" : { },
+"workingMillis" : 12,
+"durationMillis" : 12
+}

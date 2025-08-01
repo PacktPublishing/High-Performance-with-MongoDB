@@ -1,0 +1,9 @@
+{  
+  "_id": "order123",  
+  "customer": "jane_doe",  
+  "status": "shipped",  
+  "items": [  
+    { "product": "widget", "quantity": 5, "price": 10 },  
+    { "product": "gadget", "quantity": 1, "price": 20 }  
+  ]  
+}
