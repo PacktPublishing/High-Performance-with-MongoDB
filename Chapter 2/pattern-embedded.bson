@@ -1,0 +1,21 @@
+// Embedded pattern
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d5e6f"),
+  username: "jane_smith",
+  name: "Jane Smith",
+  email: "jane.smith@example.com",
+  profile: {
+    bio: "Travel enthusiast and photographer",
+    location: "San Francisco, CA",
+    birthdate: ISODate("1988-04-12T00:00:00Z"),
+    avatar: "https://socialite.com/images/avatars/jane_smith.jpg"
+  },
+  preferences: {
+    theme: "dark",
+    emailNotifications: true,
+    privacySettings: {
+      profileVisibility: "friends",
+      activityStatus: "everyone"
+    }
+  }
+}

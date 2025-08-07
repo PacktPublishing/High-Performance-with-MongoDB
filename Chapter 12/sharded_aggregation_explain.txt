@@ -1,0 +1,5 @@
+# Example: Sharded Cluster Aggregation Explain Excerpt Output Fields
+"mergeType" : "mongos",
+"splitPipeline" : {
+       "shardsPart" : [ ... ],
+       "mergerPart" : [ ... ]

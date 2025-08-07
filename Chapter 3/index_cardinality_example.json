@@ -1,0 +1,13 @@
+// For {status:{$ne:"done"}}, the index scan uses:  
+"indexBounds": {  
+  "status": [  
+    "[MinKey, \"done\")",  
+    "(\"done\", MaxKey]"  
+  ]  
+}  
+// For { status: "processing" }, the index scan uses:  
+"indexBounds": {  
+  "status": [  
+    "[\"processing\",\"processing\"]"  
+  ]  
+}

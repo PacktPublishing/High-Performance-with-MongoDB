@@ -1,0 +1,22 @@
+// Active messages collection  
+{  
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d7f5q"),  
+  conversationId: ObjectId("5f4e5b6d3c1e2a1b3c4d7f6r"),  
+  sender: ObjectId("5f4e5b6d3c1e2a1b3c4d5e7a"),  
+  recipient: ObjectId("5f4e5b6d3c1e2a1b3c4d5e6f"),  
+  content: "Are we still meeting tomorrow?",  
+  timestamp: ISODate("2023-04-10T14:30:00Z"),  
+  read: true  
+}
+
+// Archived messages collection (older than 90 days)  
+{  
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d7f7s"),  
+  conversationId: ObjectId("5f4e5b6d3c1e2a1b3c4d7f6r"),  
+  sender: ObjectId("5f4e5b6d3c1e2a1b3c4d5e7a"),  
+  recipient: ObjectId("5f4e5b6d3c1e2a1b3c4d5e6f"),  
+  content: "Hey, how's it going?",  
+  timestamp: ISODate("2023-01-05T10:15:00Z"),  
+  read: true,  
+  archivedAt: ISODate("2023-04-05T00:00:00Z")  
+}

@@ -1,4 +1,4 @@
-# Example: Explain Output on a Shard which needs to filter out orphan documents
+# Example: Explain Output excerpt on a Shard which needs to filter out orphan documents
 winningPlan: {
    stage: 'SHARD_MERGE',
    shards: [
@@ -9,6 +9,6 @@ winningPlan: {
          inputStage: {
            stage: 'SHARDING_FILTER',
            inputStage: {
-              stage: 'IXSCAN',  
-              keyPattern: { id: 1 },  
+              stage: 'IXSCAN',
+              keyPattern: { id: 1 },
               ...

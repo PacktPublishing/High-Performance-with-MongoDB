@@ -1,0 +1,15 @@
+// Extended reference pattern
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d6f4h"),
+  content: "Just visited the Golden Gate Bridge! #travels #sanfrancisco",
+  postDate: ISODate("2023-04-07T09:15:30Z"),
+  media: ["https://socialite.com/images/posts/golden_gate.jpg"],
+  likes: 42,
+  comments: 7,
+  author: {
+    _id: ObjectId("5f4e5b6d3c1e2a1b3c4d5e6f"),  // Reference to complete the user
+    username: "jane_smith",                     // Dupplicated for display
+    name: "Jane Smith",                         // Duplicated for display
+    avatar: "https://socialite.com/images/avatars/jane_smith.jpg". // Duplicated for display
+  }
+}

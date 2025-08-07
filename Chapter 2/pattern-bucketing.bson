@@ -1,0 +1,33 @@
+// With bucketing (optimized for fast timeline displays)
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d5f2f"),
+  userId: ObjectId("5f4e5b6d3c1e2a1b3c4d5e6f"),
+  date: ISODate("2023-04-10T00:00:00Z"),
+  activities: [
+    {
+      type: "post",
+      postId: ObjectId("5f4e5b6d3c1e2a1b3c4d6f4h"),
+      timestamp: ISODate("2023-04-10T10:00:00Z"),
+      content: "Just posted a new photo!",
+      mediaUrl: "https://socialite.com/images/photo123.jpg",
+      likes: 42
+    },
+    {
+      type: "follow",
+      timestamp: ISODate("2023-04-10T10:15:12Z"),
+      targetUser: {
+        id: ObjectId("5f4e5b6d3c1e2a1b3c4d6f7j"),
+        username: "travel_adventures"
+      }
+    },
+    {
+      type: "like",
+      timestamp: ISODate("2023-04-10T10:25:30Z"),
+      postId: ObjectId("5f4e5b6d3c1e2a1b3c4d6f8k"),
+      postAuthor: "mountain_explorer",
+      postSnippet: "Summit day at Mt. Rainier..."
+    }
+    // ... more activities within this day
+  ],
+  activityCount: 27
+}
