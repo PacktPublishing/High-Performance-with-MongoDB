@@ -1,0 +1,29 @@
+// Document 1: Frequently accessed media post data
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d6f5i"),
+  postType: "video",
+  title: "My Trip to Yosemite",
+  authorId: ObjectId("5f4e5b6d3c1e2a1b3c4d5e6f"),
+  thumbnailUrl: "https://socialite.com/thumbnails/yosemite-trip.jpg",
+  duration: "3:42",
+  viewCount: 1287,
+  likeCount: 328,
+  commentCount: 57
+}
+// Document 2: Infrequently accessed media post data
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d6f6j"),
+  postId: ObjectId("5f4e5b6d3c1e2a1b3c4d6f5i"),
+  highResVideo: "https://socialite.com/videos/yosemite-trip-hd.mp4",
+  rawMetadata: {
+    codec: "H.264",
+    resolution: "1920x1080",
+    fps: 60,
+    bitrate: "12Mbps"
+  },
+  processingHistory: [
+    { timestamp: ISODate("2023-04-05T14:20:00Z"), action: "uploaded" },
+    { timestamp: ISODate("2023-04-05T14:25:12Z"), action: "processed" },
+    { timestamp: ISODate("2023-04-05T14:30:45Z"), action: "published" }
+  ]
+}

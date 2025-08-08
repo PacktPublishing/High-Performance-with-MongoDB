@@ -1,0 +1,49 @@
+// Active messages collection - current conversation state (for fast access)
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d7f6r"),
+  participants: [
+    ObjectId("5f3d7eb8c242d20df83d3a8c"),  // jane_smith
+    ObjectId("5f4e5b6d3c1e2a1b3c4d5e7a")   // john_doe
+  ],
+  lastMessage: {
+    sender: ObjectId("5f4e5b6d3c1e2a1b3c4d5e7a"),
+    content: "See you tomorrow!",
+    timestamp: ISODate("2023-04-12T18:45:22Z")
+  },
+  unreadCount: {
+    "5f3d7eb8c242d20df83d3a8c": 0,
+    "5f4e5b6d3c1e2a1b3c4d5e7a": 1
+  },
+  // Recent messages (subset pattern)
+  recentMessages: [
+    {
+      sender: ObjectId("5f4e5b6d3c1e2a1b3c4d5e7a"),
+      content: "See you tomorrow!",
+      timestamp: ISODate("2023-04-12T18:45:22Z"),
+      read: false
+    },
+    {
+      sender: ObjectId("5f3d7eb8c242d20df83d3a8c"),
+      content: "Yes, 3 PM works for me.",
+      timestamp: ISODate("2023-04-12T18:44:15Z"),
+      read: true
+    }
+    // 10-15 most recent messages
+  ]
+}
+
+// Archived messages collection - for older messages, using bucketing pattern
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d8f1t"),
+  conversationId: ObjectId("5f4e5b6d3c1e2a1b3c4d7f6r"),
+  date: ISODate("2023-04-11T00:00:00Z"),  // One bucket per day
+  messages: [
+    {
+      sender: ObjectId("5f3d7eb8c242d20df83d3a8c"),
+      content: "How about meeting tomorrow?",
+      timestamp: ISODate("2023-04-11T15:30:12Z"),
+      read: true
+    }
+    // More messages from this day
+  ]
+}

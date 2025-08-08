@@ -1,0 +1,29 @@
+// Current version (in main collection)
+{
+  _id: "feature_story_sharing",
+  name: "Story Sharing Feature",
+  isEnabled: true,
+  userPercentage: 75,
+  configuration: {
+    maxDurationSeconds: 30,
+    allowedFilters: ["sepia", "noir", "vintage"],
+    maxFileSize: 15728640
+  },
+  version: 3,
+  lastUpdated: ISODate("2023-04-12T16:30:00Z")
+}
+// History collection (previous version)
+{
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d7f2o"),
+  featureId: "feature_story_sharing",
+  name: "Story Sharing Feature",
+  isEnabled: true,
+  userPercentage: 50,  // Was 50%, now 75%
+  configuration: {
+    maxDurationSeconds: 30,
+    allowedFilters: ["sepia", "noir"],  // "vintage" filter added later
+    maxFileSize: 15728640
+  },
+  version: 2,
+  updatedAt: ISODate("2023-04-10T09:15:00Z")
+}

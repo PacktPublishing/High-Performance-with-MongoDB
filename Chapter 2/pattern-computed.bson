@@ -1,0 +1,29 @@
+{  
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d6f7k"),  
+  content: "Check out my new photography portfolio!",  
+  postDate: ISODate("2023-04-10T14:30:00Z"),  
+  // Pre-computed metrics  
+  engagementMetrics: {  
+    totalViews: 1432,  
+    uniqueViewers: 1053,  
+    likeCount: 287,  
+    commentCount: 43,  
+    shareCount: 18,  
+    avgTimeViewed: 12.5,  // in seconds  
+    conversionRate: 0.086  // % of viewers who took action  
+  },  
+  // Demographics of engagers (pre-computed)  
+  audienceBreakdown: {  
+    genderDistribution: {  
+      male: 0.48,  
+      female: 0.51,  
+      other: 0.01  
+    },  
+    ageGroups: {  
+      "18-24": 0.32,  
+      "25-34": 0.45,  
+      "35-44": 0.15,  
+      "45+": 0.08  
+    }  
+  }  
+}

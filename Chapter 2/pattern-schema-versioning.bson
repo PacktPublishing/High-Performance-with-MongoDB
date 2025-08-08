@@ -1,0 +1,22 @@
+// New document with schema version 3  
+{  
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d5e6f"),  
+  schemaVersion: 3,  
+  username: "jane_smith",  
+  name: {  // In schema v3, we split name into first/last  
+    first: "Jane",  
+    last: "Smith"  
+  },  
+  email: "jane.smith@example.com",  
+  // ... other fields  
+}
+
+// Older document with schema version 2  
+{  
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d5e7a"),  
+  schemaVersion: 2,  
+  username: "john_doe",  
+  fullName: "John Doe",  // In schema v2, we used a single name field  
+  email: "john.doe@example.com",  
+  // ... other fields  
+}

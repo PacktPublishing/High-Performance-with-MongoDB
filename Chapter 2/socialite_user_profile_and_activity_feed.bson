@@ -1,0 +1,30 @@
+// User document  
+{
+  _id: ObjectId("5f3d7eb8c242d20df83d3a8c"),
+  username: "jane_smith",
+  name: "Jane Smith",
+  bio: "Photographer and travel enthusiast",
+  profileImage: "https://socialite.com/images/profiles/jane_smith.jpg",
+  followerCount: 1245,  // Computed pattern
+  followingCount: 362,  // Computed pattern
+  // Subset pattern - most recent activities
+  recentActivities: [
+    {
+      type: "post",
+      timestamp: ISODate("2023-04-07T10:22:15Z"),
+      content: "Just posted photos from my Japan trip!",
+      imageUrl: "https://socialite.com/images/posts/japan123.jpg",
+      likeCount: 48
+    },
+    {
+      type: "like",
+      timestamp: ISODate("2023-04-07T09:15:30Z"),
+      targetPost: {
+        id: ObjectId("5f3d7eb8c242d20df83d3a94"),
+        author: "travel_adventures",
+        snippet: "My day at Mount Fuji..."
+      }
+    }
+    // 3-5 more recent activities
+  ]
+}

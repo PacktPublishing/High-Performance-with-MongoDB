@@ -1,0 +1,22 @@
+{  
+  _id: "user_5f4e5b6d3c1e2a1b3c4d5e6f",  // Main user document  
+  username: "jane_smith",  
+  email: "jane.smith@example.com"  
+  // ... other user fields  
+}
+
+{  
+  _id: "user_5f4e5b6d3c1e2a1b3c4d5e6f_notif_001",  // Notification with prefix  
+  type: "like",  
+  message: "Alex liked your post",  
+  timestamp: ISODate("2023-04-10T10:30:00Z"),  
+  read: false  
+}
+
+{  
+  _id: "user_5f4e5b6d3c1e2a1b3c4d5e6f_notif_002",  // Another notification  
+  type: "comment",  
+  message: "Sarah commented on your post",  
+  timestamp: ISODate("2023-04-10T11:15:00Z"),  
+  read: false  
+}

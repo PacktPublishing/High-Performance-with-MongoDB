@@ -1,2 +1,0 @@
-mongodb soft nofile 64000
-mongodb hard nofile 64000

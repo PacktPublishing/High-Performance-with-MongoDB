@@ -1,0 +1,29 @@
+// Post activity  
+{  
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d5e6f"),  
+  activityType: "post",  
+  userId: ObjectId("5f4e5b6d3c1e2a1b3c4d5e7a"),  
+  timestamp: ISODate("2023-04-10T15:30:00Z"),  
+  content: "Just posted a new photo!",  
+  mediaUrl: "https://socialite.com/images/photo123.jpg"  
+}
+
+// Follow activity  
+{  
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d5e7b"),  
+  activityType: "follow",  
+  userId: ObjectId("5f4e5b6d3c1e2a1b3c4d5e7a"),  
+  timestamp: ISODate("2023-04-10T16:45:00Z"),  
+  targetUserId: ObjectId("5f4e5b6d3c1e2a1b3c4d5e8c"),  
+  targetUsername: "alex_wong"  
+}
+
+// Group join activity  
+{  
+  _id: ObjectId("5f4e5b6d3c1e2a1b3c4d5e8d"),  
+  activityType: "group_join",  
+  userId: ObjectId("5f4e5b6d3c1e2a1b3c4d5e7a"),  
+  timestamp: ISODate("2023-04-10T17:15:00Z"),  
+  groupId: ObjectId("5f4e5b6d3c1e2a1b3c4d5e9e"),  
+  groupName: "Photography Enthusiasts"  
+}
