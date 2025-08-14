@@ -2,6 +2,6 @@
 # Query: db.coll.find({a:{$ne:null}})
 
 # Sample explain output fields:
-  stage: 'IXSCAN'
-  keyPattern: { a: 1 }
+  stage: 'IXSCAN',
+  keyPattern: { a: 1 },
   indexBounds: { a: [ '[MinKey, null)', '(null, MaxKey]' ] }
