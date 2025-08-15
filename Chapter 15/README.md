@@ -46,6 +46,4 @@ Below are the code and command snippets provided for this chapter. These example
 - [MongoDB Performance Best Practices](https://www.mongodb.com/docs/manual/administration/production-notes/)
 - [MongoDB Operations Checklist](https://www.mongodb.com/docs/manual/administration/production-checklist-operations/)
 - [Database Profiler](https://www.mongodb.com/docs/manual/reference/database-profiler/)
-- [Atlas Performance Advisor](https://www.mongodb.com/docs/atlas/cluster-performance-advisor/)
-- [Monitoring and Alerting in Atlas](https://www.mongodb.com/docs/atlas/monitoring/)
 - [ServerStatus Command](https://www.mongodb.com/docs/manual/reference/command/serverStatus/)
