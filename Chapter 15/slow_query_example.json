@@ -12,7 +12,6 @@
   "limit": 1
 }
 
-/*
 "planSummary": "COLLSCAN",
 "planningTimeMicros": 259,
 "keysExamined": 0,
@@ -20,4 +19,3 @@
 "nreturned": 1,
 "durationMillis": 103,
 "cpuNanos": 10987385
-*/
