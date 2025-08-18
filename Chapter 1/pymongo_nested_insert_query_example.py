@@ -5,7 +5,7 @@ client = MongoClient('mongodb://localhost:27017/')
 db = client['store_database']
 collection = db['products']
 
-# Insert a product document with nested information
+# Define a product document with nested information
 product = {
     "name": "Ergonomic Keyboard",
     "price": 129.99,
