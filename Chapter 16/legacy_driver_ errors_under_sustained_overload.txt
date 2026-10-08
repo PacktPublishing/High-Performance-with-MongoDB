@@ -1,0 +1,11 @@
+2026-01-15 18:16:26:640 10 sec: 2443044 operations; 244279.97 current ops/sec; est completion in 11 seconds [INSERT: Count=2443044, Max=1446911, Min=1, Avg=1011.39, 90=2, 99=7851, 99.9=139647, 99.99=515071] 
+Exception while trying bulk insert with 100 
+Exception while trying bulk insert with 100 
+com.mongodb.MongoCommandException: Command failed with error 462 (IngressRequestRateLimitExceeded): 'Request rejected: ingress request rate limit exceeded' on server 10.2.3.144:27017. The full response is {"ok": 0.0, "errmsg": "Request rejected: ingress request rate limit exceeded", "code": 462, "codeName": "IngressRequestRateLimitExceeded", "errorLabels": ["SystemOverloadedError", "RetryableError", "NoWritesPerformed"]}
+ 	at com.mongodb.internal.connection.ProtocolHelper.getCommandFailureException(ProtocolHelper.java:198)
+ 	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:413)
+ 	...
+ 	at com.mongodb.client.internal.MongoCollectionImpl.insertMany(MongoCollectionImpl.java:481)
+ 	at site.ycsb.db.MongoDbClient.insert(MongoDbClient.java:663)
+ 	at site.ycsb.DBWrapper.insert(DBWrapper.java:228)
+ 	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:621) 	at site.ycsb.ClientThread.run(ClientThread.java:135)
